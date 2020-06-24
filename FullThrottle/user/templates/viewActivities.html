@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>View Activities</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+
+		}
+		nav{
+
+			margin:0px;
+			height: 90px;
+		}
+
+
+
+
+		 @media screen and (min-width: 300px)and (max-width: 440px) {
+
+			nav{
+			height: 70px;
+		    }
+		 }
+
+</style>
+
+</head>
+<body>
+	<nav>
+		<h3 align="center" style="font-family: family-name; margin-top:25px;">View User Activities</h3>
+	</nav>
+<div class="container">
+
+		  <div class="row">
+
+    <div class="col col-sm">
+        <label for="bbb" style="margin-left:35%;">User Id</label>
+
+          <input  type="text" id="bbb" name="UserId" size="20" >
+
+    </div>
+
+    <div class="col col-sm">
+		 <button type="button" class="btn btn-info btn-sm" id="btn" onclick="myFunction()" style="margin-right:50px;">Submit</button>
+
+    </div>
+
+  </div>
+
+</div>
+    <div id="formdiv1">
+
+    </div>
+
+
+<script>
+function myFunction() {
+      var value = document.getElementById("bbb").value;
+      console.log(111);
+            console.log(value);
+      $.ajax({
+      method: "GET",
+        url: "/viewActivities/",
+        data:{
+                 'id': value
+        },
+
+        success: function (data) {
+        document.getElementById("formdiv1").innerHTML=data;
+      }
+      });
+
+    }
+
+</script>
+</body>
+</html>

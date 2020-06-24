@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid" style="height:660px; margin-top:0px; background: linear-gradient(to top right, #00ffcc 0%, #ff66ff 100%);">
+  <div class="card mx-auto" style="width:350px;" >
+    <img class="card-img-top" src="{% static 'media/user.jpg' %}" alt="Card image" style="width:100%">
+    <div class="card-body">
+        <a href="{% url 'insert' %}" class="btn btn-primary btn-sm" style="white-space: nowrap">Insert Activites</a>
+
+      <a href="{% url 'selectId' %}" class="btn btn-primary btn-sm" style="white-space: nowrap">View Activites</a>
+    </div>
+  </div>
+
+
+
+</div>
+
+</body>
+</html>

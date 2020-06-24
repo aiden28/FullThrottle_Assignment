@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #ac{
+    height:130px;
+    border-style:groove;
+    margin:25px;
+    }
+</style>
+<body>
+{% if f < f1 %}
+<h3 align="center">Record does not Exist</h3>
+{% else %}
+
+<div class="container">
+	 <section class="att">
+         <div id="ac" >
+	 	<div class="idTest" style="float: left; font-size: 25px;">Id: {{id}}</div>
+	 	<div class="mm" style="float: right; font-size: 25px;">Name: {{name}}</div>
+             <br>
+             <br>
+         <div class="idTest" style="float: left; font-size: 25px;">Country: {{c}}</div>
+	 	<div class="mm" style="float: right; font-size: 25px;">City: {{city}}</div>
+         </div>
+		<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">S.NO.</th>
+      <th scope="col" style="text-align: center;"> Start Date</th>
+      <th scope="col"  style="text-align: center;">End Date</th>
+        <th scope="col"  style="text-align: center;"> Start Time</th>
+        <th scope="col"  style="text-align: center;">End Time</th>
+
+
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for i,sd,ed,st,et in data %}
+    <tr>
+      <td scope="row">{{i}}</td>
+      <td>{{sd}}</td>
+      <td>{{ed}}</td>
+        <td>{{st}}</td>
+        <td>{{et}}</td>
+
+    </tr>
+  {% endfor %}
+
+
+  </tbody>
+</table>
+	</section>
+    </div>
+{% endif %}
+</body>
+</html>
